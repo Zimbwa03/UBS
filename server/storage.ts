@@ -1,9 +1,6 @@
 import { type Donation, type InsertDonation, type CampaignSettings, type NewsletterSubscriber } from "@shared/schema";
 import { randomUUID } from "crypto";
-import { drizzle } from "drizzle-orm/neon-http";
-import { neon } from "@neondatabase/serverless";
-import { donations, campaignSettings, newsletterSubscribers } from "@shared/schema";
-import { eq, sql, desc } from "drizzle-orm";
+import { createClient } from '@supabase/supabase-js';
 
 export interface IStorage {
   // Donations
@@ -25,9 +22,10 @@ export interface IStorage {
   initializeDatabase(): Promise<void>;
 }
 
-// Initialize database connection
-const sql_client = neon(process.env.DATABASE_URL!);
-const db = drizzle(sql_client);
+// Initialize Supabase connection
+const supabaseUrl = 'https://sqbnzpwxbzlmjbqsclia.supabase.co';
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNxYm56cHd4YnpsbWpicXNjbGlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4OTkzMDMsImV4cCI6MjA3MjQ3NTMwM30.9nn_-l1kjRZqHtl9iIFCaxUbnBxhLAXbL0jvE6vsW3Y';
+const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 export class DatabaseStorage implements IStorage {
   async initializeDatabase(): Promise<void> {
@@ -69,7 +67,7 @@ export class DatabaseStorage implements IStorage {
       const existingCampaign = await db.select().from(campaignSettings).limit(1);
       if (existingCampaign.length === 0) {
         await db.insert(campaignSettings).values({
-          targetAmount: "4000.00",
+          targetAmount: "1000.00",
           campaignTitle: "Chinpangura Outreach - Helping Underprivileged Kids",
           endDate: new Date("2025-09-26T16:00:00Z"),
           isActive: true,
@@ -165,7 +163,7 @@ export class MemStorage implements IStorage {
     // Initialize campaign settings
     this.campaignSettings = {
       id: randomUUID(),
-      targetAmount: "4000.00",
+      targetAmount: "1000.00",
       campaignTitle: "Chinpangura Outreach - Helping Underprivileged Kids",
       endDate: new Date("2025-09-26T16:00:00Z"),
       isActive: true,

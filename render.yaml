@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ubs-fundraising
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VITE_SUPABASE_URL
+        value: https://sqbnzpwxbzlmjbqsclia.supabase.co
+      - key: VITE_SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNxYm56cHd4YnpsbWpicXNjbGlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4OTkzMDMsImV4cCI6MjA3MjQ3NTMwM30.9nn_-l1kjRZqHtl9iIFCaxUbnBxhLAXbL0jvE6vsW3Y
+      - key: DATABASE_URL
+        value: postgresql://postgres:Ngonidzashe2003.@db.sqbnzpwxbzlmjbqsclia.supabase.co:5432/postgres

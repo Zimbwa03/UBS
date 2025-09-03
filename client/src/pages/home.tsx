@@ -10,7 +10,8 @@ import Footer from "@/components/footer";
 import FloatingDonateButton from "@/components/floating-donate-button";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Phone, Clock, MapPin } from "lucide-react";
+import { Heart, Phone, Clock, MapPin, Settings } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Home() {
   const scrollToDonation = () => {
@@ -35,13 +36,25 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">Extending Hope</p>
               </div>
             </div>
-            <Button 
-              onClick={scrollToDonation}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground"
-              data-testid="header-donate-button"
-            >
-              Donate Now
-            </Button>
+            <div className="flex items-center space-x-3">
+              <Link href="/admin">
+                <Button 
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center space-x-2"
+                >
+                  <Settings className="w-4 h-4" />
+                  <span>Admin</span>
+                </Button>
+              </Link>
+              <Button 
+                onClick={scrollToDonation}
+                className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                data-testid="header-donate-button"
+              >
+                Donate Now
+              </Button>
+            </div>
           </div>
         </div>
       </header>

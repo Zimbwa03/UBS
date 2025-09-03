@@ -15,7 +15,7 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
   const { data: campaign } = useCampaignSettings();
   const countdown = useCountdown(campaign?.endDate);
 
-  const targetAmount = parseFloat(campaign?.targetAmount || "4000");
+  const targetAmount = parseFloat(campaign?.targetAmount || "1000");
   const currentAmount = stats?.totalRaised || 0;
   const remaining = Math.max(targetAmount - currentAmount, 0);
 

@@ -1,10 +1,21 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+import { supabase } from "@/lib/supabase";
 import { type CampaignSettings } from "@shared/schema";
 
 export function useCampaignSettings() {
   return useQuery<CampaignSettings>({
-    queryKey: ["/api/campaign"],
+    queryKey: ["campaign-settings"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('campaign_settings')
+        .select('*')
+        .eq('is_active', true)
+        .single();
+      
+      if (error && error.code !== 'PGRST116') throw error; // PGRST116 = no rows returned
+      return data as CampaignSettings;
+    },
+    refetchInterval: 30000, // Refetch every 30 seconds
   });
 }
 
@@ -13,8 +24,17 @@ export function useNewsletterSubscription() {
 
   return useMutation({
     mutationFn: async (email: string) => {
-      const response = await apiRequest("POST", "/api/newsletter/subscribe", { email });
-      return response.json();
+      const { data, error } = await supabase
+        .from('newsletter_subscribers')
+        .insert({ email })
+        .select()
+        .single();
+      
+      if (error) throw error;
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-stats"] });
     },
   });
 }

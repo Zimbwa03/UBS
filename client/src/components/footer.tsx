@@ -89,10 +89,30 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-          <p data-testid="text-footer-copyright">
-            &copy; 2025 Ubalo Sungano. All rights reserved. Built with ❤️ for a better tomorrow.
-          </p>
+        <div className="border-t border-border mt-8 pt-8">
+          <div className="text-center text-muted-foreground mb-4">
+            <p data-testid="text-footer-copyright">
+              &copy; 2025 Ubalo Sungano. All rights reserved. Built with ❤️ for a better tomorrow.
+            </p>
+          </div>
+          
+          {/* Built by Neuronet AI Solutions */}
+          <div className="flex items-center justify-center space-x-3 text-sm text-muted-foreground">
+            <span>Built by</span>
+            <a 
+              href="https://neuronetai.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-primary transition-colors"
+            >
+              <img 
+                src="https://sqbnzpwxbzlmjbqsclia.supabase.co/storage/v1/object/sign/Neuronet%20Ai%20Solutions/WhatsApp%20Image%202025-09-03%20at%2021.38.04_75dce74b.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzdhNTNjYS04ZGVjLTRlNjMtOWNkNi05NGJiMGNmNTEyYmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOZXVyb25ldCBBaSBTb2x1dGlvbnMvV2hhdHNBcHAgSW1hZ2UgMjAyNS0wOS0wMyBhdCAyMS4zOC4wNF83NWRjZTc0Yi5qcGciLCJpYXQiOjE3NTY5MjgzNTUsImV4cCI6NTI1NzQyNDM1NX0.07k7ZQMAkV5J2m5bBvz9mT5Qtz3lQDvST4_3p_KX7GU"
+                alt="Neuronet AI Solutions Logo"
+                className="w-6 h-6 rounded-sm object-cover"
+              />
+              <span className="font-medium">Neuronet AI Solutions Pvt.</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

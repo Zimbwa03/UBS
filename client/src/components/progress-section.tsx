@@ -7,7 +7,7 @@ export default function ProgressSection() {
   const { data: stats } = useDonationStats();
   const { data: campaign } = useCampaignSettings();
 
-  const targetAmount = parseFloat(campaign?.targetAmount || "4000");
+  const targetAmount = parseFloat(campaign?.targetAmount || "1000");
   const currentAmount = stats?.totalRaised || 0;
   const progressPercentage = Math.min((currentAmount / targetAmount) * 100, 100);
   const remaining = Math.max(targetAmount - currentAmount, 0);

@@ -1,0 +1,14 @@
+{
+  "name": "supabase-db-setup",
+  "version": "1.0.0",
+  "description": "Database setup script for fundraising app",
+  "main": "setup_database.js",
+  "scripts": {
+    "setup": "node setup_database.js"
+  },
+  "dependencies": {
+    "pg": "^8.11.3"
+  }
+}
+
+
