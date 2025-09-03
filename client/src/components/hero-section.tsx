@@ -21,14 +21,17 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary to-secondary py-20">
-      <div className="absolute inset-0 bg-black/20"></div>
+      {/* Main Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/attached_assets/WhatsApp Image 2025-09-03 at 09.16.08_b3e78996_1756898451830.jpg')"
+          backgroundImage: "url('https://sqbnzpwxbzlmjbqsclia.supabase.co/storage/v1/object/sign/Neuronet%20Ai%20Solutions/WhatsApp%20Image%202025-09-03%20at%2022.11.21_51960aa2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzdhNTNjYS04ZGVjLTRlNjMtOWNkNi05NGJiMGNmNTEyYmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOZXVyb25ldCBBaSBTb2x1dGlvbnMvV2hhdHNBcHAgSW1hZ2UgMjAyNS0wOS0wMyBhdCAyMi4xMS4yMV81MTk2MGFhMi5qcGciLCJpYXQiOjE3NTY5MzA0NDMsImV4cCI6NTI1NzQyNjQ0M30.doAia6ZriKjqY_9JNVWHqOia6eRNcW3kRubLqTnGFMk')"
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80"></div>
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Subtle gradient overlay for visual enhancement */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="mb-6">
@@ -38,13 +41,13 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
           </Badge>
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-testid="text-hero-title">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl" data-testid="text-hero-title">
           Chinpangura<br />
-          <span className="gradient-text">Outreach</span>
+          <span className="gradient-text drop-shadow-lg">Outreach</span>
         </h1>
         
-        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90" data-testid="text-hero-subtitle">
-          Extending a helping hand to <strong>30 underprivileged kids</strong> in Guruve
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95 drop-shadow-lg" data-testid="text-hero-subtitle">
+          Extending a helping hand to <strong className="text-yellow-300">30 underprivileged kids</strong> in Guruve
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -67,7 +70,7 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
         </div>
         
         {/* Live Stats Bar */}
-        <Card className="bg-card/95 backdrop-blur rounded-2xl max-w-4xl mx-auto">
+        <Card className="bg-white/95 backdrop-blur-md rounded-2xl max-w-4xl mx-auto shadow-2xl border border-white/20">
           <CardContent className="p-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
