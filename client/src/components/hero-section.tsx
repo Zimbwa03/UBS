@@ -5,6 +5,7 @@ import { useDonationStats } from "@/hooks/use-donations";
 import { useCampaignSettings } from "@/hooks/use-campaign-stats";
 import { useCountdown } from "@/hooks/use-campaign-stats";
 import { Calendar, Heart, Share2 } from "lucide-react";
+import HeroSlider from "./hero-slider";
 
 interface HeroSectionProps {
   onDonateClick: () => void;
@@ -19,15 +20,17 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
   const currentAmount = stats?.totalRaised || 0;
   const remaining = Math.max(targetAmount - currentAmount, 0);
 
+  // Background images for the slider
+  const backgroundImages = [
+    "https://sqbnzpwxbzlmjbqsclia.supabase.co/storage/v1/object/sign/Neuronet%20Ai%20Solutions/WhatsApp%20Image%202025-09-03%20at%2022.11.21_51960aa2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzdhNTNjYS04ZGVjLTRlNjMtOWNkNi05NGJiMGNmNTEyYmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOZXVyb25ldCBBaSBTb2x1dGlvbnMvV2hhdHNBcHAgSW1hZ2UgMjAyNS0wOS0wMyBhdCAyMi4xMS4yMV81MTk2MGFhMi5qcGciLCJpYXQiOjE3NTY5MzEwODcsImV4cCI6NTI1NzQyNzA4N30.Wq9pIwl-kLc396JfpHvlC7z3ETntu_zhEGzBOwy2-0E",
+    "https://sqbnzpwxbzlmjbqsclia.supabase.co/storage/v1/object/sign/Neuronet%20Ai%20Solutions/WhatsApp%20Image%202025-09-03%20at%2022.18.29_b5e54ac4.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzdhNTNjYS04ZGVjLTRlNjMtOWNkNi05NGJiMGNmNTEyYmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOZXVyb25ldCBBaSBTb2x1dGlvbnMvV2hhdHNBcHAgSW1hZ2UgMjAyNS0wOS0wMyBhdCAyMi4xOC4yOV9iNWU1NGFjNC5qcGciLCJpYXQiOjE3NTY5MzExMDcsImV4cCI6NTI1NzQyNzEwN30.XrYFc2XhtsV3zR3e-dUj89TbHJ_wdJqvj0mNGQyi7ik"
+  ];
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary to-secondary py-20">
-      {/* Main Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://sqbnzpwxbzlmjbqsclia.supabase.co/storage/v1/object/sign/Neuronet%20Ai%20Solutions/WhatsApp%20Image%202025-09-03%20at%2022.11.21_51960aa2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzdhNTNjYS04ZGVjLTRlNjMtOWNkNi05NGJiMGNmNTEyYmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOZXVyb25ldCBBaSBTb2x1dGlvbnMvV2hhdHNBcHAgSW1hZ2UgMjAyNS0wOS0wMyBhdCAyMi4xMS4yMV81MTk2MGFhMi5qcGciLCJpYXQiOjE3NTY5MzA0NDMsImV4cCI6NTI1NzQyNjQ0M30.doAia6ZriKjqY_9JNVWHqOia6eRNcW3kRubLqTnGFMk')"
-        }}
-      />
+      {/* Image Slider Background */}
+      <HeroSlider images={backgroundImages} interval={6000} />
+      
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40"></div>
       {/* Subtle gradient overlay for visual enhancement */}
