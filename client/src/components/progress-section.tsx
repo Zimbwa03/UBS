@@ -2,15 +2,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useDonationStats } from "@/hooks/use-donations";
 import { useCampaignSettings } from "@/hooks/use-campaign-stats";
 import { Users, Clock, Heart } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function ProgressSection() {
-  const { data: stats } = useDonationStats();
+  const { data: stats, isFetching } = useDonationStats();
   const { data: campaign } = useCampaignSettings();
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const targetAmount = parseFloat(campaign?.targetAmount || "1000");
   const currentAmount = stats?.totalRaised || 0;
   const progressPercentage = Math.min((currentAmount / targetAmount) * 100, 100);
   const remaining = Math.max(targetAmount - currentAmount, 0);
+
+  // Trigger animation when data is being fetched (new donation submitted)
+  useEffect(() => {
+    if (isFetching) {
+      setIsAnimating(true);
+      const timer = setTimeout(() => setIsAnimating(false), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [isFetching]);
 
   return (
     <section className="py-16 bg-muted/30">
@@ -38,7 +49,11 @@ export default function ProgressSection() {
             <div className="w-full bg-border rounded-full h-6 shadow-inner">
               {/* Animated Progress Fill */}
               <div 
-                className="progress-bar h-6 rounded-full shadow-md transition-all duration-1000" 
+                className={`h-6 rounded-full shadow-md transition-all duration-1000 ${
+                  isAnimating 
+                    ? 'progress-bar-animated' 
+                    : 'progress-bar'
+                }`}
                 style={{ width: `${progressPercentage}%` }}
                 data-testid="progress-bar"
               />
@@ -46,15 +61,27 @@ export default function ProgressSection() {
             
             {/* Milestone Markers */}
             <div className="absolute top-0 left-1/4 transform -translate-x-1/2">
-              <div className={`w-3 h-3 ${progressPercentage >= 25 ? 'bg-secondary' : 'bg-border'} rounded-full -mt-1 shadow-md`} />
+              <div className={`w-3 h-3 ${
+                progressPercentage >= 25 
+                  ? (isAnimating ? 'bg-green-500 animate-pulse' : 'bg-secondary') 
+                  : 'bg-border'
+              } rounded-full -mt-1 shadow-md`} />
               <div className="text-xs text-muted-foreground mt-2 whitespace-nowrap">25%</div>
             </div>
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
-              <div className={`w-3 h-3 ${progressPercentage >= 50 ? 'bg-secondary' : 'bg-border'} rounded-full -mt-1 shadow-md`} />
+              <div className={`w-3 h-3 ${
+                progressPercentage >= 50 
+                  ? (isAnimating ? 'bg-green-500 animate-pulse' : 'bg-secondary') 
+                  : 'bg-border'
+              } rounded-full -mt-1 shadow-md`} />
               <div className="text-xs text-muted-foreground mt-2 whitespace-nowrap">50%</div>
             </div>
             <div className="absolute top-0 left-3/4 transform -translate-x-1/2">
-              <div className={`w-3 h-3 ${progressPercentage >= 75 ? 'bg-secondary' : 'bg-border'} rounded-full -mt-1 shadow-md`} />
+              <div className={`w-3 h-3 ${
+                progressPercentage >= 75 
+                  ? (isAnimating ? 'bg-green-500 animate-pulse' : 'bg-secondary') 
+                  : 'bg-border'
+              } rounded-full -mt-1 shadow-md`} />
               <div className="text-xs text-muted-foreground mt-2 whitespace-nowrap">75%</div>
             </div>
           </div>
@@ -67,6 +94,16 @@ export default function ProgressSection() {
             <span className="text-lg text-muted-foreground" data-testid="text-progress-remaining">
               ${remaining.toLocaleString()} remaining
             </span>
+            
+            {/* New Donation Indicator */}
+            {isAnimating && (
+              <div className="mt-4 animate-pulse">
+                <div className="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+                  <span>New donation received! 🎉</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

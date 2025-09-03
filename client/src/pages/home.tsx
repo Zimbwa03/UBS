@@ -10,8 +10,7 @@ import Footer from "@/components/footer";
 import FloatingDonateButton from "@/components/floating-donate-button";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Phone, Clock, MapPin, Settings } from "lucide-react";
-import { Link } from "wouter";
+import { Phone, Clock, MapPin } from "lucide-react";
 
 export default function Home() {
   const scrollToDonation = () => {
@@ -28,8 +27,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
-                <Heart className="w-5 h-5 text-secondary-foreground" />
+              <div className="w-12 h-12 rounded-full overflow-hidden shadow-md">
+                <img 
+                  src="https://sqbnzpwxbzlmjbqsclia.supabase.co/storage/v1/object/sign/Neuronet%20Ai%20Solutions/WhatsApp%20Image%202025-09-03%20at%2022.01.38_0a8ab4b9.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzdhNTNjYS04ZGVjLTRlNjMtOWNkNi05NGJiMGNmNTEyYmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOZXVyb25ldCBBaSBTb2x1dGlvbnMvV2hhdHNBcHAgSW1hZ2UgMjAyNS0wOS0wMyBhdCAyMi4wMS4zOF8wYThhYjRiOS5qcGciLCJpYXQiOjE3NTY5Mjk4NTUsImV4cCI6NTI1NzQyNTg1NX0.KKloM4ugoy7K78DyBIADp9GMqpIvxmumUK1iUw5A2gw"
+                  alt="Ubalo Sungano Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h1 className="text-lg font-bold text-primary">Ubalo Sungano</h1>
@@ -37,16 +40,6 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center space-x-3">
-              <Link href="/admin">
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  className="flex items-center space-x-2"
-                >
-                  <Settings className="w-4 h-4" />
-                  <span>Admin</span>
-                </Button>
-              </Link>
               <Button 
                 onClick={scrollToDonation}
                 className="bg-accent hover:bg-accent/90 text-accent-foreground"

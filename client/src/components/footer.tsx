@@ -1,4 +1,4 @@
-import { Heart, Phone, MapPin, Facebook, Twitter, Instagram, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Facebook, Twitter, Instagram, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -7,8 +7,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
-                <Heart className="w-6 h-6 text-secondary-foreground" />
+              <div className="w-12 h-12 rounded-xl overflow-hidden shadow-md">
+                <img 
+                  src="https://sqbnzpwxbzlmjbqsclia.supabase.co/storage/v1/object/sign/Neuronet%20Ai%20Solutions/WhatsApp%20Image%202025-09-03%20at%2022.01.38_0a8ab4b9.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzdhNTNjYS04ZGVjLTRlNjMtOWNkNi05NGJiMGNmNTEyYmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOZXVyb25ldCBBaSBTb2x1dGlvbnMvV2hhdHNBcHAgSW1hZ2UgMjAyNS0wOS0wMyBhdCAyMi4wMS4zOF8wYThhYjRiOS5qcGciLCJpYXQiOjE3NTY5Mjk4NTUsImV4cCI6NTI1NzQyNTg1NX0.KKloM4ugoy7K78DyBIADp9GMqpIvxmumUK1iUw5A2gw"
+                  alt="Ubalo Sungano Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-primary" data-testid="text-footer-org-name">
