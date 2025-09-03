@@ -1,0 +1,174 @@
+# Advanced Fundraising Event Web App Development Prompt
+
+## Project Overview
+Create a modern, responsive fundraising event web application that serves as both a marketing platform and real-time donation tracker. The app should encourage continuous engagement through dynamic visual feedback and real-time progress updates.
+
+## Core Requirements
+
+### 1. Marketing & Event Information
+- **Hero Section**: Eye-catching banner with event title, compelling tagline, and call-to-action
+- **Event Details**: Date, time, location, purpose, and impact statement
+- **Story Section**: Emotional narrative explaining why donations matter
+- **Gallery**: Photos/videos showcasing the cause or previous events
+- **Testimonials**: Supporter quotes and success stories
+- **Contact Information**: Organization details and social media links
+
+### 2. Real-Time Donation Tracking System
+- **Dynamic Progress Bar**: 
+  - Animated, stylish progress visualization
+  - Shows current amount vs. target goal
+  - Percentage completion display
+  - Smooth animations when updated
+  - Color-coded (e.g., red → yellow → green based on progress)
+- **Live Statistics Dashboard**:
+  - Total amount raised
+  - Number of donors
+  - Amount remaining to goal
+  - Average donation amount
+  - Recent donation activity feed
+- **Milestone Indicators**: Visual markers for fundraising milestones (25%, 50%, 75%, 100%)
+- **Countdown Timer**: Time remaining for the fundraising campaign
+
+### 3. Supabase Integration Requirements
+- **Real-time Database**: Set up Supabase table for donations with fields:
+  - donation_id, donor_name, amount, timestamp, message, is_anonymous
+- **Real-time Subscriptions**: Implement Supabase real-time listeners for instant updates
+- **Data Security**: Proper row-level security policies
+- **API Integration**: RESTful endpoints for donation submission and retrieval
+
+### 4. Technical Specifications
+
+#### Frontend Framework
+- Use React with modern hooks (useState, useEffect, custom hooks)
+- Implement Supabase JavaScript client for real-time functionality
+- Responsive design using Tailwind CSS or styled-components
+- Progressive Web App (PWA) capabilities for mobile optimization
+
+#### UI/UX Design Requirements
+- **Modern Design**: Clean, professional aesthetic with consistent branding
+- **Accessibility**: WCAG 2.1 AA compliance, proper ARIA labels
+- **Mobile-First**: Fully responsive across all devices
+- **Performance**: Fast loading times, optimized images and assets
+- **Animations**: Subtle micro-interactions and smooth transitions
+- **Color Psychology**: Use trust-building colors (blues, greens) with accent colors for CTAs
+
+#### Advanced Progress Visualization
+- **Multiple Chart Types**: Progress bars, circular progress, thermometer-style indicators
+- **Animation Library**: Use Framer Motion or similar for smooth animations
+- **Real-time Updates**: Instant visual feedback when new donations arrive
+- **Interactive Elements**: Hover effects, clickable progress segments
+- **Goal Achievement Celebration**: Confetti or celebration animation when target is reached
+
+### 5. Key Features to Implement
+
+#### Donation Interface
+- Simple, secure donation form
+- Multiple payment amount options
+- Custom amount input
+- Donor name and message fields
+- Anonymous donation option
+- Payment gateway integration placeholder
+
+#### Social Features
+- **Social Sharing**: Pre-populated social media sharing buttons
+- **Leaderboard**: Top donors (with permission)
+- **Recent Activity**: Live feed of recent donations
+- **Impact Calculator**: Show what specific amounts can achieve
+
+#### Engagement Tools
+- **Email Newsletter Signup**: Capture leads for future campaigns
+- **Volunteer Registration**: Allow people to offer time instead of money
+- **Event Reminders**: Calendar integration
+- **Push Notifications**: For mobile users (PWA)
+
+### 6. Data Management
+
+#### Supabase Schema
+```sql
+-- Donations table
+CREATE TABLE donations (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  donor_name TEXT,
+  email TEXT,
+  amount DECIMAL(10,2) NOT NULL,
+  message TEXT,
+  is_anonymous BOOLEAN DEFAULT false,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+
+-- Campaign settings table
+CREATE TABLE campaign_settings (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  target_amount DECIMAL(10,2) NOT NULL,
+  campaign_title TEXT NOT NULL,
+  end_date TIMESTAMP,
+  is_active BOOLEAN DEFAULT true
+);
+```
+
+#### Real-time Functionality
+- Implement Supabase real-time subscriptions for instant updates
+- Handle connection states and offline scenarios
+- Optimistic UI updates with rollback on failure
+
+### 7. Performance & Security
+
+#### Optimization
+- Lazy loading for images and components
+- Debounced API calls
+- Caching strategies for static content
+- Code splitting for faster initial load
+
+#### Security Measures
+- Input validation and sanitization
+- Rate limiting for donation submissions
+- HTTPS enforcement
+- Environment variable management for API keys
+
+### 8. Additional Enhancement Ideas
+
+#### Gamification Elements
+- Donation streaks and badges
+- Progress milestone celebrations
+- Donor recognition levels
+- Team fundraising competitions
+
+#### Analytics & Reporting
+- Donation patterns and trends
+- Geographic distribution of donors
+- Campaign performance metrics
+- Export capabilities for reporting
+
+#### Advanced UI Components
+- Interactive donation heatmap
+- Animated counter components
+- Progress timeline visualization
+- Mobile-optimized gesture interactions
+
+## Deliverables Expected
+
+1. **Complete React Application** with modern component architecture
+2. **Supabase Integration** with real-time capabilities
+3. **Responsive Design** that works on all devices
+4. **Documentation** including setup instructions and API usage
+5. **Deployment-Ready Code** with environment configuration
+6. **Testing Strategy** for key functionality
+
+## Technical Stack Recommendations
+- **Frontend**: React 18+ with TypeScript
+- **Styling**: Tailwind CSS with custom components
+- **Animation**: Framer Motion for advanced animations
+- **Database**: Supabase with real-time subscriptions
+- **State Management**: React Context or Zustand
+- **Build Tool**: Vite for fast development
+- **Deployment**: Vercel or Netlify for frontend, Supabase for backend
+
+## Success Metrics
+- Real-time progress updates with < 2 second latency
+- Mobile responsiveness across all major devices
+- Accessible design meeting WCAG standards
+- Engaging animations that don't impact performance
+- Secure and scalable database integration
+
+Create a polished, professional fundraising platform that not only tracks donations effectively but also creates an engaging experience that motivates continued participation and sharing.
