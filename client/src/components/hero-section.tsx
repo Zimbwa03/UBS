@@ -44,19 +44,19 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
           </Badge>
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl" data-testid="text-hero-title">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl px-4" data-testid="text-hero-title">
           Chinpangura<br />
           <span className="gradient-text drop-shadow-lg">Outreach</span>
         </h1>
         
-        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95 drop-shadow-lg" data-testid="text-hero-subtitle">
+        <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95 drop-shadow-lg px-4" data-testid="text-hero-subtitle">
           Extending a helping hand to <strong className="text-yellow-300">30 underprivileged kids</strong> in Guruve
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 px-4">
           <Button 
             onClick={onDonateClick}
-            className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg transform hover:scale-105 transition-all"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg transform hover:scale-105 transition-all w-full sm:w-auto"
             data-testid="button-hero-donate"
           >
             <Heart className="w-5 h-5 mr-2" />
@@ -64,7 +64,7 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
           </Button>
           <Button 
             variant="outline" 
-            className="border-2 border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-lg text-lg"
+            className="border-2 border-white/30 hover:bg-white/10 text-white px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg w-full sm:w-auto"
             data-testid="button-hero-share"
           >
             <Share2 className="w-5 h-5 mr-2" />
@@ -73,9 +73,9 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
         </div>
         
         {/* Live Stats Bar */}
-        <Card className="bg-white/95 backdrop-blur-md rounded-2xl max-w-4xl mx-auto shadow-2xl border border-white/20">
-          <CardContent className="p-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <Card className="bg-white/95 backdrop-blur-md rounded-2xl max-w-4xl mx-auto shadow-2xl border border-white/20 mx-4">
+          <CardContent className="p-4 sm:p-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
               <div>
                 <div className="text-2xl md:text-3xl font-bold text-primary" data-testid="text-stats-raised">
                   ${currentAmount.toLocaleString()}

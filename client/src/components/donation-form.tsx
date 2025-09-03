@@ -140,8 +140,8 @@ export default function DonationForm() {
             <div className="space-y-3">
               <div>
                 <Label className="text-sm font-medium text-gray-600 mb-2 block">EcoCash Number</Label>
-                <div className="flex items-center space-x-2">
-                  <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-mono text-lg">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
+                  <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-3 sm:px-4 py-3 font-mono text-base sm:text-lg break-all">
                     {ECOCASH_NUMBER}
                   </div>
                   <Button
@@ -149,9 +149,10 @@ export default function DonationForm() {
                     size="sm"
                     variant="outline"
                     onClick={() => copyToClipboard(ECOCASH_NUMBER, 'number')}
-                    className="px-3"
+                    className="px-3 sm:px-3 w-full sm:w-auto"
                   >
                     {copiedNumber ? <Check className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
+                    <span className="ml-2 sm:hidden">Copy Number</span>
                   </Button>
                 </div>
               </div>
@@ -159,8 +160,8 @@ export default function DonationForm() {
               {/* EcoCash Name */}
               <div>
                 <Label className="text-sm font-medium text-gray-600 mb-2 block">Account Name</Label>
-                <div className="flex items-center space-x-2">
-                  <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-semibold text-lg">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
+                  <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-3 sm:px-4 py-3 font-semibold text-base sm:text-lg break-all">
                     {ECOCASH_NAME}
                   </div>
                   <Button
@@ -168,9 +169,10 @@ export default function DonationForm() {
                     size="sm"
                     variant="outline"
                     onClick={() => copyToClipboard(ECOCASH_NAME, 'name')}
-                    className="px-3"
+                    className="px-3 sm:px-3 w-full sm:w-auto"
                   >
                     {copiedName ? <Check className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
+                    <span className="ml-2 sm:hidden">Copy Name</span>
                   </Button>
                 </div>
               </div>
@@ -178,16 +180,16 @@ export default function DonationForm() {
             
             {/* Instructions */}
             <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-              <h4 className="font-semibold text-blue-800 mb-2 flex items-center">
-                <Phone className="w-4 h-4 mr-2" />
+              <h4 className="font-semibold text-blue-800 mb-3 flex items-center text-base sm:text-lg">
+                <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
                 How to Pay:
               </h4>
-              <ol className="text-sm text-blue-700 space-y-1 list-decimal list-inside">
-                <li>Dial *151# on your mobile phone</li>
-                <li>Select "Send Money"</li>
-                <li>Enter the EcoCash number above</li>
-                <li>Enter your donation amount</li>
-                <li>Enter your EcoCash PIN to confirm</li>
+              <ol className="text-sm sm:text-base text-blue-700 space-y-2 list-decimal list-inside">
+                <li className="leading-relaxed">Dial <span className="font-mono bg-blue-100 px-2 py-1 rounded">*151#</span> on your mobile phone</li>
+                <li className="leading-relaxed">Select <span className="font-semibold">"Send Money"</span></li>
+                <li className="leading-relaxed">Enter the EcoCash number above</li>
+                <li className="leading-relaxed">Enter your donation amount</li>
+                <li className="leading-relaxed">Enter your EcoCash PIN to confirm</li>
               </ol>
             </div>
           </div>
