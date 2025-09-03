@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { useDonationStats, useCampaignSettings } from "@/hooks/use-donations";
+import { useDonationStats } from "@/hooks/use-donations";
+import { useCampaignSettings } from "@/hooks/use-campaign-stats";
 import { Users, Clock, Heart } from "lucide-react";
 
 export default function ProgressSection() {

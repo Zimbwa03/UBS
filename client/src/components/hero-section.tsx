@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { useDonationStats, useCampaignSettings } from "@/hooks/use-donations";
+import { useDonationStats } from "@/hooks/use-donations";
+import { useCampaignSettings } from "@/hooks/use-campaign-stats";
 import { useCountdown } from "@/hooks/use-campaign-stats";
 import { Calendar, Heart, Share2 } from "lucide-react";
 
@@ -24,7 +25,7 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"
+          backgroundImage: "url('/attached_assets/WhatsApp Image 2025-09-03 at 09.16.08_b3e78996_1756898451830.jpg')"
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80"></div>

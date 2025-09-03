@@ -189,7 +189,7 @@ export default function DonationForm() {
               <Checkbox
                 id="anonymous"
                 checked={isAnonymous}
-                onCheckedChange={setIsAnonymous}
+                onCheckedChange={(checked) => setIsAnonymous(checked === true)}
                 data-testid="checkbox-anonymous"
               />
               <Label htmlFor="anonymous" className="text-sm text-muted-foreground">
