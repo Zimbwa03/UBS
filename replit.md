@@ -1,6 +1,6 @@
 # Overview
 
-This is a modern fundraising event web application for the "Chinpangura Outreach" - a charitable initiative by Ubalo Sungano to help 30 underprivileged children in Guruve. The application serves as both a marketing platform showcasing the cause and a real-time donation tracker with dynamic progress visualization. Built as a full-stack application, it features a React frontend with shadcn/ui components and an Express.js backend with PostgreSQL database integration via Drizzle ORM.
+This is a modern fundraising event web application for the "Chipangura Outreach" - a charitable initiative by Ubabalo Sungano to help 30 underprivileged children in Guruve. The application serves as both a marketing platform showcasing the cause and a real-time donation tracker with dynamic progress visualization. Built as a full-stack application, it features a React frontend with shadcn/ui components and an Express.js backend with PostgreSQL database integration via Drizzle ORM.
 
 # User Preferences
 

@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Grace M.",
     role: "Parent",
-    message: "Thanks to Ubalo Sungano's support, my daughter now has the school supplies she needs. This organization truly cares about our children's future.",
+    message: "Thanks to Ubabalo Sungano's support, my daughter now has the school supplies she needs. This organization truly cares about our children's future.",
     color: "primary"
   },
   {
@@ -17,7 +17,7 @@ const testimonials = [
   {
     name: "Community Leader",
     role: "Guruve District",
-    message: "Ubalo Sungano's dedication to our community's children gives us hope. Their consistent outreach programs are changing lives.",
+    message: "Ubabalo Sungano's dedication to our community's children gives us hope. Their consistent outreach programs are changing lives.",
     color: "accent"
   }
 ];

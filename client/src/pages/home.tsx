@@ -30,12 +30,12 @@ export default function Home() {
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-md">
                 <img 
                   src="https://sqbnzpwxbzlmjbqsclia.supabase.co/storage/v1/object/sign/Neuronet%20Ai%20Solutions/WhatsApp%20Image%202025-09-03%20at%2022.01.38_0a8ab4b9.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzdhNTNjYS04ZGVjLTRlNjMtOWNkNi05NGJiMGNmNTEyYmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJOZXVyb25ldCBBaSBTb2x1dGlvbnMvV2hhdHNBcHAgSW1hZ2UgMjAyNS0wOS0wMyBhdCAyMi4wMS4zOF8wYThhYjRiOS5qcGciLCJpYXQiOjE3NTY5Mjk4NTUsImV4cCI6NTI1NzQyNTg1NX0.KKloM4ugoy7K78DyBIADp9GMqpIvxmumUK1iUw5A2gw"
-                  alt="Ubalo Sungano Logo"
+                  alt="Ubabalo Sungano Logo"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h1 className="text-base sm:text-lg font-bold text-primary">Ubalo Sungano</h1>
+                <h1 className="text-base sm:text-lg font-bold text-primary">Ubabalo Sungano</h1>
                 <p className="text-xs sm:text-sm text-muted-foreground">Extending Hope</p>
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function Home() {
                   <div>
                     <h3 className="text-lg sm:text-xl font-semibold mb-3 text-primary">Our Mission</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Ubalo Sungano is organizing the Chinpangura Outreach to extend a helping hand to 30 underprivileged children in the Guruve area. This initiative aims to provide essential support including educational materials, nutritious meals, and healthcare assistance to children who need it most.
+                      Ubabalo Sungano is organizing the Chipangura Outreach to extend a helping hand to 30 underprivileged children in the Guruve area. This initiative aims to provide essential support including educational materials, nutritious meals, and healthcare assistance to children who need it most.
                     </p>
                   </div>
 

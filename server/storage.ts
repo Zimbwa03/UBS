@@ -68,7 +68,7 @@ export class DatabaseStorage implements IStorage {
       if (existingCampaign.length === 0) {
         await db.insert(campaignSettings).values({
           targetAmount: "1000.00",
-          campaignTitle: "Chinpangura Outreach - Helping Underprivileged Kids",
+          campaignTitle: "Chipangura Outreach - Helping Underprivileged Kids",
           endDate: new Date("2025-09-26T16:00:00Z"),
           isActive: true,
         });
@@ -164,7 +164,7 @@ export class MemStorage implements IStorage {
     this.campaignSettings = {
       id: randomUUID(),
       targetAmount: "1000.00",
-      campaignTitle: "Chinpangura Outreach - Helping Underprivileged Kids",
+      campaignTitle: "Chipangura Outreach - Helping Underprivileged Kids",
       endDate: new Date("2025-09-26T16:00:00Z"),
       isActive: true,
       createdAt: new Date(),

@@ -45,7 +45,7 @@ export default function HeroSection({ onDonateClick }: HeroSectionProps) {
         </div>
         
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl px-4" data-testid="text-hero-title">
-          Chinpangura<br />
+          Chipangura<br />
           <span className="gradient-text drop-shadow-lg">Outreach</span>
         </h1>
         

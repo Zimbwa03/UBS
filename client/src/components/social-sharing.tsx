@@ -9,7 +9,7 @@ import { Facebook, Twitter, MessageCircle, Copy } from "lucide-react";
 export default function SocialSharing() {
   const { toast } = useToast();
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const shareText = "Join me in supporting the Chinpangura Outreach to help 30 underprivileged kids in Guruve!";
+  const shareText = "Join me in supporting the Chipangura Outreach to help 30 underprivileged kids in Guruve!";
 
   const copyToClipboard = async () => {
     try {
